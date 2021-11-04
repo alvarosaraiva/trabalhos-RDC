@@ -1,0 +1,17 @@
+body { font:15px calibri,arial,tahoma,verdana,sans-serif; }
+
+nav ul { margin:0; padding:0; list-style:none; }
+nav ul li { float:left; width:150px; position:relative; }
+nav ul li a { background:#333; color:#fff; display:block; 
+	padding:7px 8px; text-decoration:none; 
+	border-top:1px solid #069; }
+nav ul li a:hover { color:#069; }
+
+/*=== sub menu ===*/
+nav ul ul { display:none; position:absolute; left:0; 
+	list-style:none; padding:0; }
+nav ul ul li { width:150px; float:left; } 
+nav ul ul a { display:block; height:15px; padding:7px 8px; 
+	color:#fff; text-decoration:none; 
+	border-bottom:1px solid #222; }
+nav ul ul a:hover { color:#069; }

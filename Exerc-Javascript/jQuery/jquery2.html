@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#p1").click(function(){
+        $("a").hide(1000);
+    });
+	$("#p2").click(function(){
+        $("a").show(1000);
+    });
+});
+</script>
+</head>
+<body>
+
+<p id="p1">Esconde os links</p>
+<p id="p2">Mostra os links</p>
+<a href="#">Google</a>
+<a href="#">ESJAL</a>
+
+</body>
+</html>

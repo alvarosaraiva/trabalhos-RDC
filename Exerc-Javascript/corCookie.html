@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>O Maravilhoso Mundo dos Cookies</title>
+<style>
+body{
+	background:red;
+}
+</style>
+<script>
+	function criaCookie(){
+		
+		for(var i=0; i< document.form1.cor.length;i++)
+			if (document.form1.cor[i].checked)
+			 	var valorCookie= document.form1.cor[i].value;
+	
+		var dataExp=new Date();
+		dataExp.setMonth(dataExp.getMonth()+1);    // prazo de validade do cookie (1 mês)
+		document.cookie= "cor=" + valorCookie + ";expires=" + dataExp.toGMTString();	// cria o cookie
+	}
+	
+
+	
+	function mudaCor(){
+		
+	var c="cor";
+	var inicio=document.cookie.indexOf("=");
+	if (inicio!=-1)
+		inicio++;	
+	var fim=document.cookie.indexOf(";");
+	if (fim!=-1){
+		fim=document.cookie.length;
+		}
+	var corEscolhida=document.cookie.substring(inicio,fim);
+	document.body.style.background="yellow";
+	alert(corEscolhida);
+	}
+	
+	
+</script>
+</head>
+
+<body onLoad="mudaCor()">
+<p>Qual a sua cor preferida?</p>
+<form name="form1" action="" method="get">
+<input type="radio" value="green" name="cor" />Verde<br/>
+<input type="radio" value="red" name="cor" />Vermelho<br/>
+<input type="radio" value="blue" name="cor" />Azul<br/>
+<input type="radio" value="yellow" name="cor" />Amarelo<br/>
+<input type="radio" value="pink" name="cor" />Rosa<br/>
+<input type="submit" onClick="criaCookie()"/>
+</form>
+</body>
+</html>

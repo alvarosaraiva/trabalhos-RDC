@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>O Maravilhoso Mundo dos Cookies</title>
+<script>
+	function criarCookie(nomeCookie){
+		
+		var valorCookie= document.getElementById(nomeCookie).value;		// vai "buscar" o valor para o cookie
+		
+		var dataExp=new Date();
+		dataExp.setMonth(dataExp.getMonth()+1);    // prazo de validade do cookie (1 mês)
+		
+
+		document.cookie= nomeCookie + "=" + valorCookie + ";expires=" + dataExp.toGMTString();	// cria o cookie
+		
+	}
+	
+
+	
+	function mostrarCookie(idCookie){
+	var inicio=document.cookie.indexOf(idCookie+"=");
+		if (inicio!=-1){
+			inicio+=idCookie.length+1;
+			fim=document.cookie.indexOf(";");
+			if(fim==-1)
+				fim=document.cookie.length;
+				
+			alert(document.cookie.substring(inicio,fim));
+		}
+	}
+	
+	
+	function apagarCookie(nomeCookie){
+		var dataExp=new Date();
+		dataExp.setDate(dataExp.getDate()-1);
+		
+		document.cookie= document.getElementById(nomeCookie).value + "=;expires=" + dataExp.toGMTString();
+	}
+</script>
+</head>
+
+<body>
+<p>Introduza o seu nome: <input type="text" id="nome" onblur="criarCookie('nome')"></p>
+
+<p>Introduza a sua idade: <input type="text" id="idade" onblur="criarCookie('idade')"></p>
+
+<p>Introduza o nome da cookie para apagar: <input type="text" id="apagar" onblur="apagarCookie('apagar')"></p>
+
+<p><button onclick="mostrarCookie('nome')">Mostrar cookie</button></p>
+
+</body>
+</html>

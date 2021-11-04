@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+	<script>
+	function inverterTexto()
+	{
+	var frase=cxTexto.value;
+	var finv="";
+	for (var i=frase.length;i>=0;i--)
+		finv=finv + frase.charAt(i);
+	cxTexto.value=finv;
+	}
+	</script>
+</head>
+<body>
+    <hr />
+<p>INVERTER TEXTO</p>
+<hr>
+Escreva um texto: <input type="text" id="cxTexto"/> <button onclick="inverterTexto()">Inverter texto</button>
+<hr>

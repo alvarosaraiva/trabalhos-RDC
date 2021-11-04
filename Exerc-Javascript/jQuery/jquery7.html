@@ -1,0 +1,58 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registo</title>
+<meta charset="utf-8">
+<!-- Include CSS File Here -->
+<link rel="stylesheet" href="jquery7css.css"/>
+<!-- Include JS File Here -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(	).ready(function() {
+$("#register").click(function() {
+var name = $("#name").val();
+var email = $("#email").val();
+var password = $("#password").val();
+var cpassword = $("#cpassword").val();
+if ((password.length) < 8) {
+alert("Password tem de ter no minimo 8 caracteres...!!!!!!");
+} else if (!(password).match(cpassword)) {
+alert("As passwords n�o coincidem. Tente novamente");
+} else {
+$.post("register.php", {
+name1: name,
+email1: email,
+password1: password
+}, function(data) {
+if (data == 'Registado com sucesso.....') {
+$("form")[0].reset();
+}
+alert(data);
+});
+}
+});
+});
+
+</script>
+</head>
+<body>
+<div id="container">
+
+<form name="form" method="post" action="#">
+<h2>Formulário de registo</h2>
+<label>Nome :</label>
+<input type="text" name="dname" id="name" required>
+<label>Email :</label>
+<input type="email" name="demail" id="email" required>
+<label>Password :</label>
+<input type="password" name="password" id="password" required>
+<label>Confirmar Password :</label>
+<input type="password" name="cpassword" id="cpassword" required>
+<input type="submit" name="register" id="register" value="Registar">
+</form>
+
+</body>
+</html>
+

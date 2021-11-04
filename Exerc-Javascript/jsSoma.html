@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+	<title>jsSoma</title>
+	<script>
+		function soma(){
+		 a = form1.val1.value;
+         b = form1.val2.value;
+         form1.val3.value = parseInt(a) + parseInt(b); 
+		} 
+	</script>
+</head>
+<body> 
+	<h1>Soma JavaScript</h1>
+	<form name="form1">
+		<input type="text" name="val1" size="5"> +
+		<input type="text" name="val2" size="5">
+		<input type="button" value=" = " onclick="soma()">
+		<input type="text" name="val3" size="5">
+	</form>
+</body> 
+</html> 

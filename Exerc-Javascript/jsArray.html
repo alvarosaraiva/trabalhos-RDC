@@ -1,0 +1,58 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+      <meta charset="utf-8">
+      <title>jsArray</title>
+      <script>
+        
+          function calcular(){
+            var arr = new Array(7);
+            var soma=0;
+            var i;
+            var contar=0;
+            
+            arr[0]=caixa1.value;
+            arr[1]=caixa2.value;
+            arr[2]=caixa3.value;
+            arr[3]=caixa4.value;
+            arr[4]=caixa5.value;
+            arr[5]=caixa6.value;
+            arr[6]=caixa7.value;
+                   
+            for(i=0;i<arr.length;i++){
+                    soma=soma+Number(arr[i]);
+                    if(arr[i]!=0)
+                        contar++;
+            }
+            
+            
+            caixa8.value=contar;
+            caixa9.value=(soma).toFixed(2)+"€";
+            caixa10.value=(soma/contar).toFixed(2)+"€";
+            
+            
+          }
+      </script>
+  </head>
+  <body>
+      <table border="1">
+          <tr>
+              <td><input type="text" id="caixa1" size="1" value="0"/></td>
+              <td><input type="text" id="caixa2" size="1" value="0"/></td>
+              <td><input type="text" id="caixa3" size="1" value="0"/></td>
+              <td><input type="text" id="caixa4" size="1" value="0"/></td>
+              <td><input type="text" id="caixa5" size="1" value="0"/></td>
+              <td><input type="text" id="caixa6" size="1" value="0"/></td>
+              <td><input type="text" id="caixa7" size="1" value="0"/></td>
+          </tr>
+          </table>
+      <button onclick="calcular()">Calcular Custos</button><br/>
+          Pontos com defeito: <input type="text" id="caixa8" size="5"/><br/>
+          Dinheiro gasto: <input type="text" id="caixa9" size="5"/><br/>
+          Média de dinheiro: <input type="text" id="caixa10" size="5"/><br/>
+      </body>
+</html>

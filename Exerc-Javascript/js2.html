@@ -1,0 +1,40 @@
+﻿<!doctype html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+	<title>js2</title>
+	<script>
+		function maiorMenor10()
+		{
+			var v1 = prompt("Diga um valor");
+			var v2 = prompt("Diga um valor");
+			var total=Number(v1)+Number(v2);
+			if (total>10)
+				alert("Resultado= "+ total + "\n\nA soma dos valores é maior que 10");
+			else if (total<10)
+				alert("Resultado= "+ total + "\n\nA soma dos valores é menor que 10");
+			else
+				alert("A soma dos valores deu 10");
+			sair();
+		}
+
+		function sair()
+		{
+			var resposta=confirm("Deseja sair?");
+			if (resposta==true)
+				window.close();
+			else
+				alert("Então continuemos...");
+		}
+	</script>
+	
+</head>
+<body>
+	<h1> JS 2</h1>
+
+		<img  src="esjal.jpg" alt="esjal" width="336" heigth="71" onclick="maiorMenor10()">
+
+	
+</div>
+</body>
+</html>

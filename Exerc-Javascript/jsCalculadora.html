@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<title>jsCalculadora</title>
+	<style>
+		input[type="button"]{
+			border-radius:25px;
+		}
+		table{
+			border: 1px solid black;
+			border-radius: 5px;
+		}
+		input[type="text"]{
+			background:pink;
+			border-radius: 5px;
+		}
+	</style>
+	<script>
+		function limpa(){
+		 	caixa.value="";	
+			ponto.disabled=false;
+		}
+		function adicionar(x){
+			caixa.value+=x;
+			if(x=='.')
+				ponto.disabled=true;
+				
+		}
+		
+		function operacao(op){
+			operador1=parseFloat(caixa.value);
+			caixa.value="";
+			ponto.disabled=false;
+			switch(op){
+				case '+':sinal=1;break;
+				case '-':sinal=2;break;
+				case '*':sinal=3;break;
+				case '/':sinal=4;break;
+			}
+		}
+		
+		function resultado(){
+			var operador2=parseFloat(caixa.value);
+			switch(sinal){
+				case 1:caixa.value=operador1+operador2; break;
+				case 2:caixa.value=operador1-operador2; break;
+				case 3:caixa.value=operador1*operador2; break;
+				case 4:caixa.value=operador1/operador2; break;
+			}
+		}
+		 
+	</script>
+</head>
+
+<body>
+	<h3>CALCULADORA</h3>
+	
+    <table>
+    	<tr>
+    	<td colspan="3"><input type="text" name="caixa" id="caixa" size="10"> </td>
+        <td><input type="button" name="val2" value="C" onclick="limpa()"></td>
+		</tr>
+        <tr>
+        <td><input type="button" value="7" onclick="adicionar('7')"></td>
+        <td><input type="button" value="8" onclick="adicionar('8')"></td>
+        <td><input type="button" value="9" onclick="adicionar('9')"></td>
+        <td><input type="button" value="+" onclick="operacao('+')"></td>
+     	</tr>
+        <tr>
+        <td><input type="button" value="4" onclick="adicionar(4)"></td>
+        <td><input type="button" value="5" onclick="adicionar(5)"></td>
+        <td><input type="button" value="6" onclick="adicionar(6)"></td>
+        <td><input type="button" value="-" onclick="operacao('-')"></td>
+     	</tr>
+        <tr>
+        <td><input type="button" value="1" onclick="adicionar(1)"></td>
+        <td><input type="button" value="2" onclick="adicionar(2)"></td>
+        <td><input type="button" value="3" onclick="adicionar(3)"></td>
+        <td><input type="button" value="*" onclick="operacao('*')"></td>
+     	</tr>
+        <tr>
+        <td><input type="button" value="0" onclick="adicionar(0)"></td>
+        <td><input id="ponto" type="button" value="." onclick="adicionar('.')"></td>
+        <td><input type="button" value="=" onclick="resultado()"></td>
+        <td><input type="button" value="/" onclick="operacao('/')"></td>
+     	</tr>
+     
+     </table>
+	</form>
+
+</body>
+</html>

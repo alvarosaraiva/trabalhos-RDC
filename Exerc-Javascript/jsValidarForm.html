@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+      <meta charset="utf-8">
+      <title></title>
+      <style>
+       form {
+            background-color: #9999ff;
+            border-radius:15px;
+            padding: 20px;
+            width: 500px;
+            font-family: Tahoma,Calibri,Arial;
+            text-shadow: #c0d576 2px 2px 2px;
+	}
+        
+       form ul li{
+            list-style: none;
+            line-height: 30px;
+            padding: 5px;
+        }
+          
+        #msgPass, #msgIdade, #msgTelefone{
+            font-size: 0.75em;
+            font-style: italic;
+            font-family: Arial;
+            color:red;
+            display:none;
+        }  
+        
+        #botao{
+            padding: 10px;
+            background:  #ffff99;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+        }
+      </style>
+      
+      <script>
+          function validarIdade(){
+              if (form1.idade.value<18 || isNaN(form1.idade.value))
+                 document.getElementById("msgIdade").style.display="block";
+              else
+                  document.getElementById("msgIdade").style.display="none";            
+          }
+          
+          function validarPasses(){
+                 if (form1.pass1.value!=form1.pass2.value)
+                     document.getElementById("msgPass").style.display="block";
+                else
+                     document.getElementById("msgPass").style.display="none";             
+             }
+             
+          function validarTelefone(){
+              if(isNaN(form1.telefone.value))
+                    document.getElementById("msgTelefone").style.display="block";
+              else
+                    document.getElementById("msgTelefone").style.display="none";
+            
+             }
+          
+          
+      </script>
+  </head>
+  <body>
+      <form name="form1" method="post" action="">
+        <ul>
+            <li>Nome: <input  type="text" name="nome" maxlength="30" required pattern = "[A-Za-z]{3,}" title ="Eu avisei que eram só 3 letras minusculas" placeholder="Introduza o seu nome"><br/></li>
+            <li>Palavra-passe desejada: <input  type="password" name="pass1" maxlength="30" size="30" required><br/></li>
+            <li>Repetir palavra-passe: <input  type="password" name="pass2" maxlength="30" size="30" required onblur="validarPasses()">
+                <div id="msgPass">As palavra-passe não coincidem</div>
+                </li>
+            <li>Idade: <input  type="text" name="idade" maxlength="2" size="2" required onblur="validarIdade()">
+                <div id="msgIdade">Idade inválida!</div>
+            </li>
+            <li>Telefone: <input  type="text" name="telefone" maxlength="9" size="9" required onblur="validarTelefone()"><br/></li>
+                <div id="msgTelefone">Telefone inválido!</div>
+            <li>E-mail: <input  type="email" name="mail" maxlength="30" size="30" required placeholder="Introduza o seu email"><br/></li>
+            <li><input type="submit" id="botao" value="Submeter"></li>
+        </ul>
+        </form>
+           </body>
+</html>

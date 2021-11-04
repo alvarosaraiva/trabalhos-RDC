@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+	<title>js5</title>
+	<script>
+		function jogoAdivinho(){
+			var num = parseInt(Math.random()*100); 
+			var palpite=0,cont=0; 
+			do {
+				palpite=Number(prompt("Adivinhe o Número (entre 0 e 100):")); 
+				if (palpite>num) 
+					alert("O número secreto é MENOR ");
+				else if (palpite<num) 
+					alert("O número secreto é MAIOR "); 
+				cont++; 
+			}while (palpite!=num); 
+			alert("Parabéns acertou em " + cont + " tentativas");
+		}
+			
+		function resolveMat() {
+			var msg="Digite uma expressão matemática simples:\nExemplo: 18/3+5*(6-3)"; 
+			var express=prompt(msg,""); 
+			var resp = eval(express); 
+			alert(express + " = " + resp); 
+		} 
+	</script>
+</head>
+<body> 
+
+<button onclick="jogoAdivinho()">ADIVINHAR NÚMERO</button>
+<button onclick="resolveMat()">RESOLVER MATEMÁTICA</button>
+
+</body> 
+</html> 

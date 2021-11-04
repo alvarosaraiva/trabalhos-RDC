@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>JS 6</title>
+<meta charset="utf-8" />
+<script>
+function ativar(){
+	alert("primeira caixa ativada");
+}
+
+function perder(){
+	alert("perdeu o foco");
+}
+
+function mudarTitulo(){
+	document.title="Novo título";
+}
+</script>
+</head>
+<body>
+<input type="text" onfocus="ativar()"/><br /><br />
+<input type="text" onblur="perder()"/><br /><br />
+<button onclick="mudarTitulo()">Mudar Título</button>
+</body>
+</html>

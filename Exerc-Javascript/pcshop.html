@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+	<title>Compras</title>
+	<style>
+	body{
+		background:#8EEC6A;
+		color:white;
+	}
+	h1{	
+		text-shadow: white 2px 2px 5px;
+	}
+	#field1{
+		background:#268E00;
+		width:15%;
+	}
+	#field2{
+		background:#3DA028;
+		width:15%;
+	}
+	legend{
+		padding:5px;
+		font: 20px Verdana;
+		color: #67E300;
+		text-shadow: black 2px 2px 2px;
+	}
+	button{
+		background:#25D500;
+		border-radius:15px;
+		padding:20px;
+		font: 20px Verdana;
+	}
+	</style>
+	<script>
+	function calcular(){
+		var preco=0;
+		if (pol15.checked)
+			preco+=65;
+		else if (pol17.checked)
+			preco+=87;
+		else
+			preco+=99;
+	
+		if(kitsom.checked)
+			preco+=20;
+		if(impressora.checked)
+			preco+=74;
+		if(rede.checked)
+			preco+=5;
+		if(rato.checked)
+			preco+=12;
+		if(teclado.checked)
+			preco+=19;
+	
+	document.getElementById("botao").innerHTML=("Tem de pagar: " + preco);
+	document.getElementById("botao").disabled = true;
+	}
+	</script>
+</head>
+<body> 
+	<h1>PC Shop</h1>
+	<fieldset id="field1">
+	<legend>Opções monitor</legend>
+	<p><input type="radio" name="monitor" id="pol15" checked>15 polegadas - 65€<br/>
+	<input type="radio" name="monitor" id="pol17">17 polegadas - 87€<br/>
+	<input type="radio" name="monitor" id="pol21">21 polegadas - 99€</p>
+	</fieldset>
+	<br/>
+	<fieldset id="field2">
+	<legend>Acessórios</legend>
+	<p><input type="checkbox" name="monitor" id="kitsom">kit som - 20€<br/>
+	<input type="checkbox" name="monitor" id="impressora">impressora - 74€<br/>
+	<input type="checkbox" name="monitor" id="rede">placa rede - 5€<br/>
+	<input type="checkbox" name="monitor" id="rato">rato - 12€<br/>
+	<input type="checkbox" name="monitor" id="teclado">teclado - 19€</p>
+	</fieldset>
+	<br/>
+	<button onclick="calcular()" id="botao">Calcular Preço Final</button>
+
+
+</body> 
+</html> 

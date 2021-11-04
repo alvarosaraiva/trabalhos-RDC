@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+	<title>Exercicios de revisão</title>
+	<style>
+            #botao2{
+                height: 30px;
+                background-color: yellow;
+                margin:20px;
+            }
+            p{
+                font-size: 100px;
+                text-align: center;
+            }
+
+        }  
+	</style>
+	
+        <script>
+	function mudaCor()
+	{
+		document.bgColor=cores.value;
+	}
+
+	function gerarNums()
+	{
+		
+		var nums= new Array(7);
+		var i=0;
+		do{
+		var x=parseInt(10+Math.random()*90);
+
+		if (x%2==0){
+			nums[i]=x;
+			i++;
+			}
+		}
+		while(i!=7);
+	
+		nums.sort();
+		alert(nums);
+        }
+          
+    
+	function quadrado(){
+		var a = val1.value;
+		val1.value = "Quadrado de " + a + " igual a " + (a*a);
+    } 
+</script>
+</head>
+<body>
+<p>Exercicios de revisão</p>
+<hr>
+<button id="botao2" onclick="gerarNums()">gerar 7 números pares ordenados entre 10 e 99 </button>
+<hr>
+		Introduza um número<input type="text" id="val1">
+		<button onclick="quadrado()">Numero ao quadrado</button>
+
+<hr>
+	<select id="cores" size="1">
+	<option value="white">Escolha a cor de fundo</option>
+	<option value="green">Verde</option>
+	<option value="blue">Azul</option>
+	<option value="red">Vermelho</option>
+	</select>
+	<button id="botao3" onclick="mudaCor()">Mudar fundo</button>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	
+</body> 
+</html> 
